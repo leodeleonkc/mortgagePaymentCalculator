@@ -1,0 +1,204 @@
+html {
+  scroll-behavior: smooth;
+}
+
+html,
+body {
+  height: 100vh;
+  height: calc(var(--vh, 1vh) * 100);
+  touch-action: manipulation;
+}
+
+body {
+  margin: 1rem;
+  font-family: "Nunito", sans-serif;
+  font-size: 0.875rem;
+  font-weight: 700;
+  color: #96938e;
+  background-color: #f7e9dc;
+  letter-spacing: 0.5%;
+}
+
+.container {
+  display: flex;
+  max-width: 428px;
+  margin: auto;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+header,
+.main {
+  border-radius: 0.625rem;
+  width: 100%;
+  margin-bottom: 1rem;
+  padding: 0.5rem;
+}
+
+header {
+  background-color: #ec755d;
+  color: white;
+  text-align: center;
+}
+
+.title {
+  font-size: 1.5rem;
+}
+
+.main {
+  background-color: white;
+}
+
+.subtitle {
+  color: #392315;
+  font-size: 1rem;
+  text-align: center;
+}
+
+.regular {
+  font-weight: 400;
+}
+
+.user-input {
+  display: flex;
+  flex-direction: column;
+  width: 15.438rem;
+  margin: auto;
+}
+
+.input-item {
+  text-align: center;
+  font-size: 1.5rem;
+  color: #77b5b9;
+  height: 2.813rem;
+  margin: 0.5rem 0;
+  border-radius: 0.625rem;
+  border: 1px solid #77b5b9;
+}
+
+#house-price,
+#down-payment {
+  background-image: url("images/dollar-sign.png");
+  background-position-y: center;
+  background-position-x: 0.2rem;
+  background-repeat: no-repeat;
+}
+
+::placeholder {
+  letter-spacing: 0;
+  color: #77b5b975;
+  opacity: 1;
+}
+
+.user-input-small {
+  display: flex;
+  justify-content: space-between;
+}
+
+.small {
+  width: 35%;
+  margin-bottom: 1rem;
+}
+
+.calc-btn {
+  font-size: 1.5rem;
+  color: white;
+  background-color: #77b5b9;
+  width: 15.438rem;
+  height: 2.813rem;
+  border-radius: 0.625rem;
+  border: none;
+  margin-bottom: 2rem;
+  transition-duration: 0.3s;
+}
+
+.calc-btn:hover,
+.calc-btn:active {
+  background-color: #75d2d9;
+  cursor: pointer;
+}
+
+hr {
+  height: 3px;
+  background-color: #f7e9dc;
+  border: none;
+  width: 16.313rem;
+  margin-bottom: 2rem;
+}
+
+.monthly-payment p {
+  text-align: center;
+}
+
+#payment-figure {
+  font-size: 2rem;
+  background: -webkit-linear-gradient(180deg, #75d2d9, #ec755d);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  margin: 0.5rem 0 1rem 0;
+}
+
+#the-chart {
+  margin-bottom: 2rem;
+  margin-top: 0;
+}
+
+.row {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 0 2.5rem;
+}
+
+.column2 {
+  text-align: right;
+}
+
+.secondary-figures {
+  font-size: 1rem;
+  color: #392315;
+  margin-bottom: -1rem;
+}
+
+footer,
+.directions {
+  color: #96938e;
+  font-size: 0.688rem;
+  font-weight: 400;
+  max-width: 428px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+  margin: auto;
+  padding-bottom: 2rem;
+}
+
+.footer-text {
+  padding: 0 2rem;
+}
+
+.red-alert {
+  color: #950000;
+}
+
+.hidden {
+  display: none;
+}
+
+@media (min-width: 768px) {
+  body {
+    zoom: 1.5;
+    -moz-transform: scale(1.5);
+    -moz-transform-origin: 0 0;
+  }
+}
+
+@media (max-width: 330px) {
+  body {
+    zoom: 0.7;
+    -moz-transform: scale(0.7);
+    -moz-transform-origin: 0 0;
+  }
+}

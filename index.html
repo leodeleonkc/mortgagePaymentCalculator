@@ -1,0 +1,170 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta
+      name="viewport"
+      content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no"
+    />
+
+    <!-- OG Tags -->
+    <meta property="og:title" content="Mortgage Payment Calculator" />
+    <meta
+      property="og:description"
+      content="Calculate a mortgage monthly payment with no strings attached!"
+    />
+    <meta property="og:type" content="link to app" />
+    <meta
+      property="og:url"
+      content="https://leodeleon.co/MortgageCalculator/"
+    />
+    <meta property="og:image" content="images/phpJgZsa1_c2PM.jpg" />
+
+    <title>🏘️ Mortgage Payment Calculator</title>
+
+    <!-- Google Fonts -->
+
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link
+      href="https://fonts.googleapis.com/css2?family=Nunito:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap"
+      rel="stylesheet"
+    />
+
+    <!-- Bootstrap Icons -->
+    <link
+      rel="stylesheet"
+      href="https://cdn.jsdelivr.net/npm/bootstrap-icons@1.9.1/font/bootstrap-icons.css"
+    />
+
+    <!-- My CSS -->
+    <link rel="stylesheet" href="style.css" />
+
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/Chart.js/2.9.4/Chart.js"></script>
+  </head>
+  <body>
+    <div class="container">
+      <header>
+        <h1 class="title">Mortgage Payment Calculator</h1>
+      </header>
+
+      <div class="main">
+        <h2 class="subtitle">Enter your information below</h2>
+        <div class="user-input">
+          <input
+            pattern="[0-9]*"
+            inputmode="decimal"
+            type="text"
+            class="input-item"
+            id="house-price"
+            placeholder="House Price"
+          />
+
+          <input
+            pattern="[0-9]*"
+            inputmode="decimal"
+            type="text"
+            class="input-item"
+            id="down-payment"
+            placeholder="Down Payment"
+          />
+
+          <div class="user-input-small">
+            <input
+              pattern="[0-9]*"
+              inputmode="decimal"
+              type="text"
+              class="input-item small"
+              id="term"
+              placeholder="Term"
+            />
+            <input
+              pattern="[0-9]*"
+              inputmode="decimal"
+              type="text"
+              class="input-item small"
+              id="mpr"
+              placeholder="MPR"
+            />
+          </div>
+          <button
+            class="calc-btn"
+            id="calculate-btn"
+            onclick="window.location.href='#results'"
+          >
+            Calculate
+          </button>
+        </div>
+        <div id="results"></div>
+        <div class="hidden" id="after-calculate">
+          <hr />
+
+          <div class="monthly-payment">
+            <p class="regular">Your total monthly payment*</p>
+            <p id="payment-figure"></p>
+          </div>
+          <div id="the-chart">
+            <canvas
+              id="myChart"
+              style="width: 150%; max-width: 600px; display: block"
+              width="600"
+              height="500"
+              class="chartjs-render-monitor"
+            ></canvas>
+          </div>
+          <hr />
+          <div class="row">
+            <div class="column">
+              <img
+                src="images/house-icon.svg"
+                height="93"
+                width="117"
+                alt="House icon"
+                class="house-icon"
+              />
+            </div>
+            <div class="column2">
+              <p id="total-interest" class="secondary-figures"></p>
+              <p class="regular">Total iterest</p>
+              <p id="total-cost" class="secondary-figures"></p>
+              <p class="regular">Total mortgage</p>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="directions">
+      <p class="footer-text">
+        <strong>Total House Price:</strong> Enter the house sale price in USD
+        (numbers only)
+        <br />
+        <strong>Down Payment:</strong> Enter amount of what you're planning to
+        pay up front.
+        <br />
+        <strong>Term:</strong> Enter the loan term in years (ie. 15, 20, or 30)
+        <br />
+        <strong>MPR:</strong> Enter your mortage percentage rate (ie. 5 for 5%)
+      </p>
+    </div>
+
+    <footer class="hidden" id="footer-after">
+      <p class="footer-text">
+        *payment includes national average property tax of 1.110%. Taxes vary
+        from county to county.
+      </p>
+      <p class="footer-text hidden" id="20-percent">
+        Because your down payment is less than 20% of the total loan amount, the
+        national median PMI percentage has been added to the final monthly
+        payment. PMI can vary and is not included in the final cost of the
+        mortgage.
+      </p>
+      <p class="footer-text">
+        These figures are intended to be estimates and not oficial, nor backed
+        by any financial institution.
+      </p>
+    </footer>
+
+    <script src="script.js"></script>
+  </body>
+</html>
